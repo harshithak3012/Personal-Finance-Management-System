@@ -82,8 +82,8 @@
 .card-btn:hover { color: var(--color-primary); }
 
 .add-btn { color: var(--color-primary); }
-.add-btn-fill { background-color: var(--color-primary); }
-.add-btn-fill:hover { background-color: var(--color-primary-dark); }
+.add-btn-fill { background-color: var(--color-primary); color: #ffffff; }
+.add-btn-fill:hover { background-color: var(--color-primary-dark); color: #ffffff; }
 
 /* Utility to apply the card/light-blue background to flex containers */
 .flex-bg {
