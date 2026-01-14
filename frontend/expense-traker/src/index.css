@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-display: "Poppins", "sans-serif";
+    --breakpoint-3xl: 1920px;
+
+    /* PRIMARY BRAND COLOR */
+    --color-primary: #0B1D3A; /* dark navy */
+    --brand-blue: #4F83FF; /* accent blue */
+    --color-primary-dark: #031827; /* extra dark for accents */
+    /* Card background (light blue) */
+    --card-bg: #C7DEFF;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-display);
+    }
+
+    body {
+        background-color: #F8FAFF; /* very light blue-gray */
+        overflow: auto;
+    }
+}
+
+/* INPUTS */
+.input-box {
+    @apply w-full flex justify-between gap-3 text-sm text-slate-900
+    bg-slate-100 rounded px-4 py-3 mb-4 mt-3
+    border border-slate-200 outline-none
+    focus:border-blue-400 focus:ring-1 focus:ring-blue-300;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+    @apply w-full text-sm font-medium text-white
+    shadow-lg shadow-blue-900/10
+    p-[10px] rounded-md my-1;
+    background-color: var(--brand-blue);
+}
+
+/* CARD */
+.card {
+    @apply p-6 rounded-2xl
+    shadow-md shadow-blue-900/5
+    border border-slate-200/50;
+    background-color: var(--card-bg);
+}
+
+/* CARD BUTTON */
+.card-btn {
+    @apply flex items-center gap-3 text-slate-700
+    bg-slate-50 hover:bg-blue-50
+    hover:text-[#1E40AF]
+    px-4 py-1.5 rounded-lg
+    border border-slate-200/50
+    cursor-pointer;
+}
+
+/* ADD BUTTON (OUTLINE STYLE) */
+.add-btn {
+    @apply flex items-center gap-1.5
+    text-xs md:text-sm font-medium
+    text-[#1E40AF]
+    whitespace-nowrap
+    bg-blue-50
+    border border-blue-100
+    rounded-lg px-4 py-2
+    cursor-pointer;
+}
+
+/* ADD BUTTON (FILLED) */
+.add-btn-fill {
+    @apply text-white bg-[#1E40AF] hover:bg-[#1D4ED8];
+}
+
+/* Use CSS vars for button and accent colors so theme is consistent */
+.btn-primary { background-color: var(--brand-blue); }
+.btn-primary:hover { background-color: var(--color-primary); }
+
+.card-btn:hover { color: var(--color-primary); }
+
+.add-btn { color: var(--color-primary); }
+.add-btn-fill { background-color: var(--color-primary); }
+.add-btn-fill:hover { background-color: var(--color-primary-dark); }
+
+/* Utility to apply the card/light-blue background to flex containers */
+.flex-bg {
+    background-color: var(--card-bg);
+}
